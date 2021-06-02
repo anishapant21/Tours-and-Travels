@@ -8,7 +8,7 @@ In the project directory, you can run:
 
 ### npm start
 
-(https://github.com/eternal-moon/Tours-and-Travels/blob/main/images/screen1.png)
+![Alt text](https://github.com/eternal-moon/Tours-and-Travels/blob/main/images/screen1.png)
 
 #### Demo
 
