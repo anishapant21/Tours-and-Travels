@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Tour = ({id, image, info, price, name}) => {
+const Tour = ({id, image, info, price, name, removeTour}) => {
+    const [readMore, setReadMore] = useState(false)
     return (
         <article>
             <br />
@@ -14,7 +15,7 @@ const Tour = ({id, image, info, price, name}) => {
                 <div className="content">
                     <div className="ui two column very relaxed grid">
                         <div className="column">
-                        <a className="header">
+                        <a href='/' className="header">
                         <b>{name} </b>
                     </a>
 
@@ -27,15 +28,17 @@ const Tour = ({id, image, info, price, name}) => {
                     </div>
                     <br />
                     
-                    
+                   
                     <div className='description'>
-                        {info}
+                    <p>{readMore? info:`${info.substring(0, 200)}...`}
+                        <span style={{color:'blue', cursor:'pointer'}} href='/' onClick={()=>setReadMore(!readMore)}> {readMore? ' Show less' : ' Read more'}
+                        </span> </p>
                     </div>
                     
                 </div>
 
                 
-                <button class="ui negative basic button">Not interested</button>
+                <button className="ui negative basic button" onClick={()=> removeTour(id)}>Not interested</button>
                 
                 
             </div>
